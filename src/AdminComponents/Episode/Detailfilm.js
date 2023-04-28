@@ -3,7 +3,7 @@ import React,{useState,useEffect} from "react";
 import ReactPlayer from "react-player";
 import { useMutation, useQuery } from "react-query";
 import { API } from "../../config/Api";
-import blank from "../../img/Player2.png"
+
 
 function Detafilm() {
   const { id } = useParams();
@@ -49,7 +49,7 @@ function Detafilm() {
     <div className="position-relative ">
       <div style={{ paddingLeft: "350px", backgroundColor: "rgb(30, 30, 30)" }}>
       {epi && (
-        <ReactPlayer className="z-2" url={epi ? epi[0].linkFilm: blank}  />
+        <ReactPlayer className="z-2" url={epi[0].linkFilm}  />
       )}
       </div>
       <div className="bg-black h-100 pt-5 pb-5">
