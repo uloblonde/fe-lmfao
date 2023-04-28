@@ -56,7 +56,7 @@ function Moviesdetail() {
                   <div 
                     key={i}
                    class={i === 0 ?"carousel-item relative active" : "carousel-item relative"}>
-                    <ReactPlayer url={item.linkFilm} class="d-block" alt="..." width={370} height={218} light={`http://localhost:5000/uploads/${item.thumbnailFilm}`} />
+                    <ReactPlayer url={item.linkFilm} class="d-block" alt="..." width={370} height={218} light={item.thumbnailFilm} />
                     {/* <img className="rounded pointer" src={`http://localhost:5000/uploads/${item.thumbnailFilm}`} style={{maxWidth:"400px"}} /> */}
                     <p className="text-light">Episode : {item.title}</p>
                   </div>
