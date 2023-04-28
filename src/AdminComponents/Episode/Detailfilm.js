@@ -49,7 +49,7 @@ function Detafilm() {
     <div className="position-relative ">
       <div style={{ paddingLeft: "350px", backgroundColor: "rgb(30, 30, 30)" }}>
       {epi && (
-        <ReactPlayer className="z-2" url={epi[0].linkFilm}  />
+        <ReactPlayer className="z-2" url={epi?.linkFilm}  />
       )}
       </div>
       <div className="bg-black h-100 pt-5 pb-5">
@@ -74,7 +74,7 @@ function Detafilm() {
                   Episode
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                  {epis&&epis.map((item,index)=>( 
+                  {epis?.map((item,index)=>( 
                     <li>
                     <a key={index} value={item.filmId} class="dropdown-item" href={item.linkFilm}>
                       {item.title}
