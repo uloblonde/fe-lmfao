@@ -23,6 +23,7 @@ export default function Table() {
 }
   return (
     <div className="bg-black py-2">
+       <style>{'body { background-color: black; }'}</style>
       <div className="container">
         <h3 className="text-light pt-5" >Incoming Transaction</h3>
         <div className="pt-4">
@@ -34,7 +35,7 @@ export default function Table() {
             <th scope="col">Remaining Active</th>
             <th scope="col">Status User</th>
             <th scope="col">Status Payment</th>
-
+            <th scope="col">Action</th>
           </tr>
         </thead>
         <tbody>
@@ -44,6 +45,7 @@ export default function Table() {
             <td>{item.user.fullName}</td>
             <td>{item.endDate.split("T")[0]}</td>
             <td>{item?.user.subscribe ? "Subscribe" : "not subscribed"}</td>
+            <td>{<Statuspayment status={item.status} />}</td>
             <td>{<Statuspayment status={item.status} />}</td>
           </tr>
           ))}

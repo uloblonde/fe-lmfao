@@ -14,7 +14,6 @@ import { API, setAuthToken } from "../src/config/Api";
 import { PrivateRouteAdmin, PrivateRouteLogin, PrivateRouteUser } from "./Components/privateroute/PrivateRoute";
 import { UserContext } from "./context/userContext";
 import Addfilm from "./AdminComponents/Film/Addfilm";
-import List from "./AdminComponents/List";
 import Listfilm from "./AdminComponents/Listfilm";
 import Updatefilm from "./AdminComponents/Film/Updatefilm";
 import Addformepi from "./AdminComponents/Episode/Addformepi";
