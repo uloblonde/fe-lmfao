@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Modal from "react-bootstrap/Modal";
@@ -12,14 +12,16 @@ import { UserContext } from '../context/userContext';
 
 function Login(props) {
   
-  const [_, dispatch] = useContext(UserContext)
+  const [state, dispatch] = useContext(UserContext)
   const MySwal = withReactContent(Swal);
   const iniShow = () => props.setLgn(true);
   const iniClose = () => props.setLgn(false);
+  const [reload,isReload] = useState(false)
 
   const [getState, setState] = useState({
     email: "",
     password: "",
+    role: "",
   });
 
   const { email, password } = getState;
@@ -31,10 +33,11 @@ function Login(props) {
     });
   };
 
+
   const handleOnSubmit = useMutation(async (e) => {
     try {
       e.preventDefault();
-
+      // isReload(true)
       // const parsing = localStorage.getItem('data')
       // const hasilparse = JSON.parse(parsing)
       const response = await API.post("/login", getState);
@@ -44,11 +47,13 @@ function Login(props) {
       dispatch({
         type: "LOGIN_SUCCESS",
         payload: response.data.data,
+        
       });
 
       setAuthToken(localStorage.token);
 
       iniClose(props.lmao(true));
+      
 
       MySwal.fire({
         title: <strong>Yeay</strong>,
@@ -64,6 +69,13 @@ function Login(props) {
       });
     }
   });
+
+  // useEffect(()=>{
+  //   if(reload){
+  //     window.location.reload();
+  //   }
+  // },[reload])
+
 
   return (
     <>

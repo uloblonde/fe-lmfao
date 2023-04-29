@@ -1,8 +1,12 @@
 
+import { useEffect } from "react";
 import Addfilm from "../AdminComponents/Film/Addfilm";
 import Mainpage from "../Components/Mainpage";
 import Tvmovies from "../Components/Tvmovies";
 import Datafilm from "./Cardview/Datafilm";
+import { useContext } from "react";
+import { UserContext } from "../context/userContext";
+import { useNavigate } from "react-router-dom";
 
 const tvs = [
   {
@@ -82,6 +86,15 @@ const tvss = [
 ];
 
 export default function Home() {
+  const [userState] = useContext(UserContext)
+  const navigate = useNavigate()
+
+  useEffect(() => {
+    if(userState.user.role === 'admin') {
+      navigate('/Admintable')
+    }
+  }, [userState])
+
   return (
     <>
       <Mainpage/>

@@ -83,7 +83,7 @@ export default function Addformepi() {
       <section id="project-form">
         <div class="container">
           <h2 class=" mb-2 pt-5 text-light" style={{ marginLeft: "140px" }}>
-            Add Film
+            Add Episode
           </h2>
           <form method="post" class="w-75 mx-auto" onSubmit={(e) => handleOnSubmit.mutate(e)}>
             <input type="text" class="d-none" name="id" />

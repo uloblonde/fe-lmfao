@@ -4,6 +4,7 @@ import { UserContext } from "../../context/userContext";
 
 export function PrivateRouteLogin(){
     const [state] = useContext(UserContext)
+    console.log(state.user.role)
 
     if (!state.isLogin){
         return <Navigate to={"/"}/>

@@ -65,16 +65,6 @@ const Profile = (props) => {
                 </Link>
               </div>
             </li>
-            <li>
-              <div className=" d-flex  ms-3 mt-2">
-                <Link className="text-decoration-none" to={"/Admintable"}>
-                  <img src={filmlogo} style={{ width: "25px" }} />
-                  <a class="text-light text-decoration-none ps-2" href="#">
-                    Table
-                  </a>
-                </Link>
-              </div>
-            </li>
             <div className="bg-secondary w-100 mt-2" style={{ padding: "1px" }}></div>
             <li>
               <div className=" d-flex  ms-3 mt-2">
