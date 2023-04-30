@@ -40,8 +40,7 @@ const Profile = (props) => {
     });
     navigate("/");
   };
-  console.log("LMFAO :",state);
-
+  console.log("LMFAO :", state);
 
   if (isLogout) {
     return <Inilogin loginlagi={props.inivalues} />;
@@ -68,28 +67,26 @@ const Profile = (props) => {
             <div className="bg-secondary w-100 mt-2" style={{ padding: "1px" }}></div>
             <li>
               <div className=" d-flex  ms-3 mt-2">
-                <img onClick={logout}   src={iclogout} style={{ width: "25px" ,cursor:"pointer"}} />
-                <a onClick={logout}  class="text-light text-decoration-none ps-2" href="">
+                <img onClick={logout} src={iclogout} style={{ width: "25px", cursor: "pointer" }} />
+                <a onClick={logout} class="text-light text-decoration-none ps-2" href="">
                   Logout
                 </a>
               </div>
             </li>
           </ul>
         </div>
-        // localStorage.removeItem("token")
       ) : (
+        // localStorage.removeItem("token")
         <div className="dropdown position-relative">
           <img type="button" className="w-75 btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" src={profile} />
           <ul class="dropdown-menu bg-black">
             <img className="position-absolute " style={{ bottom: "120px", left: "17px", width: "20px" }} src={polygon} />
             <li>
               <div className=" d-flex  ms-3 mt-2">
-                <Link className="text-decoration-none" to={"/Profile"}>
-                  <img src={icprofile} style={{ width: "25px" }} />
-                  <a class="text-light text-decoration-none ps-2" href="#">
-                    Profile
-                  </a>
-                </Link>
+                <img src={icprofile} style={{ width: "25px" }} />
+                <a class="text-light text-decoration-none ps-2" href={"/Profile"}>
+                  Profile
+                </a>
               </div>
             </li>
             <li>
@@ -154,16 +151,14 @@ function Navbar(props) {
               </div>
             )}
           </div>
-          {state.user.role == "admin" ?(
-            <div>
-
+          {state.user.role == "admin" ? (
+            <div></div>
+          ) : (
+            <div className="nav-logo">
+              <Link to="/">
+                <img className="me-5 pe-4" src={logo} />
+              </Link>
             </div>
-          ):(
-          <div className="nav-logo">
-            <Link to="/">
-              <img className="me-5 pe-4" src={logo} />
-            </Link>
-          </div>
           )}
           <div className="nav-buttton d-flex justify-content-between ">{state.isLogin ? <Profile /> : <Inilogin loginlagi={props.inivalues} />}</div>
         </div>

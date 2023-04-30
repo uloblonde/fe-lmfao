@@ -20,9 +20,6 @@ function Profile() {
     console.log("Hasil Response :",response)
     return response.data.data;
   });
-  
- 
-  
 
   return (
     <div className="bg-black" style={{ height: "600px" }}>
