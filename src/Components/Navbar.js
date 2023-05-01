@@ -56,12 +56,12 @@ const Profile = (props) => {
             <img className="position-absolute " style={{ bottom: "120px", left: "17px", width: "20px" }} src={polygon} />
             <li>
               <div className=" d-flex  ms-3 mt-2">
-                <Link className="text-decoration-none" to={"/Listfilm"}>
+                {/* <Link className="text-decoration-none" to={"/Listfilm"}> */}
                   <img src={filmlogo} style={{ width: "25px" }} />
-                  <a class="text-light text-decoration-none ps-2" href="#">
+                  <a class="text-light text-decoration-none ps-2" href="/Listfilm">
                     Film
                   </a>
-                </Link>
+                {/* </Link> */}
               </div>
             </li>
             <div className="bg-secondary w-100 mt-2" style={{ padding: "1px" }}></div>
